@@ -1,0 +1,96 @@
+﻿{% extends 'chairman/index2.html' %}
+
+{% block content %}       
+<section class="content home" style="background-color: rgb(217, 225, 228);">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>All Visitors <small class="text-muted"><a style="color: rgb(245, 241, 241);">Welcome to Skyline Residency</a></small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                                                    <button class="btn btn-white btn-icon btn-round d-none d-md-inline-block float-right m-l-10" type="button">
+                                <i class="zmdi zmdi-plus"></i>
+                            </button>
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="zmdi zmdi-home"></i> Skyline Residency</a></li>
+                                                            <li class="breadcrumb-item">Visitors</li>
+                                                                                        <li class="breadcrumb-item active">All Visitors</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="card patients-list">
+                <div class="header">
+                    <h2><strong>Visitor</strong> List</h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right slideUp">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else</a></li>
+                            </ul>
+                        </li>
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs padding-0">
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#All">All</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#USA">USA</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#India">India</a></li> -->
+                    </ul>
+                        
+                    <!-- Tab panes -->
+                    <div class="tab-content m-t-10">
+                        <div class="tab-pane table-responsive active" id="All">
+                            <table class="table m-b-0 table-hover">
+                                <thead>
+                                    <tr>                                       
+                                        <th>SR NO.</th>
+                                        
+                                        <th>Member Name</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Date and time</th>
+                                        <th>Contact No.</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in all %}
+                                    <tr>
+                                        <td>{{i.id}}</td>
+                                       
+                                        <td>{{i.member_name}}</td>
+                                        <td>{{i.firstname}}</td>
+                                        <td>{{i.lastname}}</td>
+                                        <td>{{i.date}} {{i.time}}</td>
+                                        
+                                        <td>{{i.contact}}</td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </section>
+{% endblock %}

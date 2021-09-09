@@ -1,0 +1,71 @@
+﻿{% extends 'chairman/index.html' %}
+
+{% block content %}       
+<section class="content home" style="background-color: rgb(217, 225, 228);">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h2>Maintenance <small class="text-muted"><a style="color: rgb(245, 241, 241);">Welcome to Skyline Residency</a></small></h2>
+                    </div>            
+                    <div class="col-lg-7 col-md-7 col-sm-12 text-right">
+                        
+                        
+                        
+                        <ul class="breadcrumb float-md-right">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="zmdi zmdi-home"></i> Skyline Residency</a></li>
+                                                            <li class="breadcrumb-item">Maintenance</li>
+                                                                                        <li class="breadcrumb-item active">Maintenances</li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">                
+                
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>Maintenance List</strong> </h2>
+                    <!-- <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            
+                        </li>
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Pay date</th>
+                                    <th>Member</th>
+                                    <th>Amount</th>
+                                    <th>Order Id</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in tall %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.made_on}}</td>
+                                    <td>{{i.made_by}}</td>
+                                    <td>{{i.amount}}</td>
+                                    <td>{{i.order_id}}</td>                                   
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </section>
+{% endblock %}
