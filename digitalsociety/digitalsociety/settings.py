@@ -129,16 +129,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nikunjp062@gmail.com' 
-EMAIL_HOST_PASSWORD = 'vidhinikunj'
 
-
-
-PAYTM_MERCHANT_ID = 'kjqqle51025952807410'
-PAYTM_SECRET_KEY = '1Ef4D8HeuTv8r23L'
-PAYTM_WEBSITE = 'WEBSTAGING'
-PAYTM_CHANNEL_ID = 'WEB'
-PAYTM_INDUSTRY_TYPE_ID = 'Retail'
